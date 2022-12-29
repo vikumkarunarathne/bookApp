@@ -1,6 +1,9 @@
-package com.example.bookapp;
+package com.example.bookapp.filters;
 
 import android.widget.Filter;
+
+import com.example.bookapp.models.ModelCategory;
+import com.example.bookapp.adapters.AdapterCategory;
 
 import java.util.ArrayList;
 
