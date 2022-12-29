@@ -81,7 +81,7 @@ public class CategoryAddActivity extends AppCompatActivity {
                     @Override
                     public void onSuccess(Void unused){
                         progressDialog.dismiss();
-                        Toast.makeText(CategoryAddActivity.this,"Category added successfuly.." ,Toast.LENGTH_SHORT).show();
+                        Toast.makeText(CategoryAddActivity.this,"Category added successfully.." ,Toast.LENGTH_SHORT).show();
 
                     }
                 })

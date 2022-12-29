@@ -4,12 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:context=".LoginActivity">
     <RelativeLayout
         android:id="@+id/toolbarRl"
         android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:background="@drawable/shape_toolbar01">
+        android:layout_height="250dp">
 
         <ImageView
             android:id="@+id/iconIv"
@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/iconIv"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="60dp"
             android:text="Sign in"
             android:textColor="@color/purple_200"
             android:fontFamily="sans-serif-condensed"
@@ -39,7 +39,9 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="80dp"
+                android:layout_marginBottom="20dp">
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/emailTil"
@@ -68,7 +70,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/emailTil"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="10dp"
                     app:passwordToggleEnabled="true"
                     app:hintEnabled="false">
 
@@ -99,7 +101,7 @@
                     android:id="@+id/loginBtn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="28dp"
+                    android:layout_marginTop="250dp"
                     android:background="@drawable/shape_button01"
                     android:text="Login"
                     android:textColor="@color/white"/>
