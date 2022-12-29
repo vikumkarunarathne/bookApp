@@ -4,13 +4,14 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.graphics.ColorSpace;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 
+import com.example.bookapp.adapters.AdapterCategory;
 import com.example.bookapp.databinding.ActivityDashboardAdminBinding;
+import com.example.bookapp.models.ModelCategory;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -27,9 +28,6 @@ public class DashboardAdminActivity extends AppCompatActivity {
 
     //firebase auth
     private FirebaseAuth firebaseAuth;
-    private ArrayList<ModelCategory> categoryArrayList;
-    private AdapterCategory adapterCategory;
-
 
     private ArrayList<ModelCategory> categoryArrayList;
     private AdapterCategory adapterCategory;
@@ -84,47 +82,6 @@ public class DashboardAdminActivity extends AppCompatActivity {
                 startActivity(new Intent(DashboardAdminActivity.this, CategoryAddActivity.class));
             }
         });
-        //handle click, start pdf add screen
-        binding.addPdfab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(DashboardAdminActivity.this, PdfAddActivity.class));
-            }
-        });
-
-
-
-
-    }
-
-    private void loadCategories() {
-
-        categoryArrayList = new ArrayList<>();
-        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Categories");
-        ref.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                categoryArrayList.clear();
-                for(DataSnapshot ds:snapshot.getChildren()){
-                    ModelCategory model = ds.getValue(ModelCategory.class);
-
-                    categoryArrayList.add(model);
-
-                }
-                adapterCategory = new AdapterCategory(DashboardAdminActivity.this,categoryArrayList);
-
-                binding.categoriesRv.setAdapter(adapterCategory);
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-
-
-
     }
 
     private void loadCategories() {

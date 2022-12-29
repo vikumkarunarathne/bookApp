@@ -1,8 +1,9 @@
-package com.example.bookapp;
+package com.example.bookapp.adapters;
 
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +16,9 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.bookapp.PdfListAdminActivity;
+import com.example.bookapp.filters.FilterCategory;
+import com.example.bookapp.models.ModelCategory;
 import com.example.bookapp.databinding.RowCategoryBinding;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -56,31 +60,43 @@ public class AdapterCategory extends RecyclerView.Adapter<AdapterCategory.Holder
 
         holder.cattegoryTv.setText(category);
 
-holder.deleteBtn.setOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View v) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        builder.setTitle("Delete")
-        .setMessage("Are you sure you want to delete this category?")
-                .setPositiveButton("Conferm", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
+        holder.deleteBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(context);
+                builder.setTitle("Delete")
+                .setMessage("Are you sure you want to delete this category?")
+                        .setPositiveButton("Conferm", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
 
-                        Toast.makeText(context, "Deleting...", Toast.LENGTH_SHORT).show();
-                        
-                        deleteCategory(model,holder);
-                        
-                    }
-                })
-                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.dismiss();
-                    }
-                })
-                .show();
-    }
-});
+                                Toast.makeText(context, "Deleting...", Toast.LENGTH_SHORT).show();
+
+                                deleteCategory(model,holder);
+
+                            }
+                        })
+                        .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        })
+                        .show();
+            }
+        });
+        //handle item click
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent =  new Intent(context, PdfListAdminActivity.class);
+                intent.putExtra("categoryId", id);
+                intent.putExtra("categoryTitle", category);
+                context.startActivity(intent);
+
+            }
+        });
+
     }
 
     private void deleteCategory(ModelCategory model, HolderCategory holder) {
