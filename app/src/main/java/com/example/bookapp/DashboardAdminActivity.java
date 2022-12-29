@@ -31,6 +31,10 @@ public class DashboardAdminActivity extends AppCompatActivity {
     private AdapterCategory adapterCategory;
 
 
+    private ArrayList<ModelCategory> categoryArrayList;
+    private AdapterCategory adapterCategory;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -88,6 +92,36 @@ public class DashboardAdminActivity extends AppCompatActivity {
             }
         });
 
+
+
+
+    }
+
+    private void loadCategories() {
+
+        categoryArrayList = new ArrayList<>();
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Categories");
+        ref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                categoryArrayList.clear();
+                for(DataSnapshot ds:snapshot.getChildren()){
+                    ModelCategory model = ds.getValue(ModelCategory.class);
+
+                    categoryArrayList.add(model);
+
+                }
+                adapterCategory = new AdapterCategory(DashboardAdminActivity.this,categoryArrayList);
+
+                binding.categoriesRv.setAdapter(adapterCategory);
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
 
 
 
