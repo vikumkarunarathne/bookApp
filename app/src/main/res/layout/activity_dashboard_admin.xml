@@ -58,9 +58,9 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/categoriesRv"
-        android:layout_width="wrap_content"
-        android:layout_height="69dp"
-        android:layout_above="@id/bottomli"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_above="@+id/bottomLl"
         android:layout_below="@id/searchEt"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
@@ -70,9 +70,18 @@
         android:layout_marginBottom="440dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:listitem="@layout/row_category" />
+    <ListView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:listitem="@layout/row_category"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="140dp"
+        android:layout_marginEnd="9dp"
+        android:layout_marginBottom="100dp"/>
 
     <LinearLayout
-        android:id="@+id/bottomli"
+        android:id="@+id/bottomLl"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
