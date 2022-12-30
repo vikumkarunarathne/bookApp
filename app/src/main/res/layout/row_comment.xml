@@ -54,7 +54,7 @@
             android:textSize="12sp"/>
 
 
-</RelativeLayout>
+    </RelativeLayout>
 
 
 </androidx.cardview.widget.CardView>

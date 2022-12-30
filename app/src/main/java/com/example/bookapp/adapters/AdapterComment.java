@@ -12,6 +12,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.bookapp.MyApplication;
 import com.example.bookapp.R;
 import com.example.bookapp.databinding.RowCommentBinding;
@@ -121,14 +122,14 @@ public class AdapterComment extends RecyclerView.Adapter<AdapterComment.HolderCo
                     public void onClick(DialogInterface dialogInterface, int i) {
 
                     }
-                });
-                  .show();
+                })
+                .show();
 
     }
 
     private void loadUserDetails(ModelComment modelComment, HolderComment holder) {
 
-        String uid modelComment.getUid();
+        String uid = modelComment.getUid();
 
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Users");
         ref.child(uid)

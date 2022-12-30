@@ -87,7 +87,7 @@ public class PdfAddActivity extends AppCompatActivity {
             }
         });
         //handle click, pick category
-        binding.categoryTv.setOnClickListener(new View.OnClickListener() {
+        binding.categoryEt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 categoryPickDialog();
@@ -122,9 +122,9 @@ public class PdfAddActivity extends AppCompatActivity {
         else if(TextUtils.isEmpty(description)){
             Toast.makeText(this, "Enter Description...", Toast.LENGTH_SHORT).show();
         }
-        else if(TextUtils.isEmpty(selectedCategoryTitle)){
+        /*else if(TextUtils.isEmpty(selectedCategoryTitle)){
             Toast.makeText(this, "Enter Category...", Toast.LENGTH_SHORT).show();
-        }
+        }*/
         else if(pdfUri == null){
             Toast.makeText(this, "Pick Pdf...", Toast.LENGTH_SHORT).show();
         }
@@ -264,7 +264,7 @@ public class PdfAddActivity extends AppCompatActivity {
                         //get clicked item from list
                         selectedCategoryTitle = categoryTitleArrayList.get(which);
                         selectedCategoryId = categoryIdArrayList.get(which);
-                        binding.categoryTv.setText(selectedCategoryTitle);
+                        binding.categoryEt.setText(selectedCategoryTitle);
 
                         Log.d(TAG, "onClick: Selected Category: "+selectedCategoryId+" "+selectedCategoryTitle);
 
