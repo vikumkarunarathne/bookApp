@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:background="@drawable/background2"
     tools:context=".PdfAddActivity">
 <!--Toolbar-->
     <RelativeLayout
         android:id="@+id/toolbarRl"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="270dp"
         android:background="@drawable/shape_toolbar01">
 
         <!--Back button-->
@@ -21,26 +21,46 @@
             android:layout_margin="18dp"
             android:background="@android:color/transparent"
             android:padding="5dp"
-            android:src="@drawable/ic_back_white"/>
+            android:src="@drawable/ic_back_white" />
         <!--Icon:Image-->
-        <ImageView
+        <TextView
             android:id="@+id/iconIv"
-            android:layout_width="110dp"
-            android:layout_height="110dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:layout_below="@id/backBtn"
-            android:src="@drawable/logo"/>
+            android:layout_marginTop="70dp"
+            android:text="LITTERATE"
+            android:textSize="25dp"
+            android:textStyle="bold|italic" />
+
+
+
+        <TextView
+            android:id="@+id/quote"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iconIv"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="30dp"
+            android:text="Read The World Through Possibilities"
+            android:textAlignment="center"
+            android:textSize="12dp"
+            android:textStyle="bold|italic" />
         <!--Title-->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/iconIv"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="18dp"
+            android:layout_marginTop="75dp"
             android:fontFamily="sans-serif-condensed"
             android:text="Add a New Book"
             android:textColor="@color/white"
-            android:textSize="28sp"/>
+            android:textSize="28sp" />
 
         <!--Attach pdf button-->
         <ImageButton
@@ -51,7 +71,7 @@
             android:layout_margin="10dp"
             android:background="@android:color/transparent"
             android:padding="5dp"
-            android:src="@drawable/ic_attach_white"/>
+            android:src="@drawable/ic_attach_white" />
 
 
     </RelativeLayout>
@@ -69,6 +89,7 @@
             android:id="@+id/titleEt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="120dp"
             android:background="@drawable/shape_edittext01"
             android:drawableStart="@drawable/ic_pdf_gray"
             android:drawablePadding="18dp"
@@ -111,7 +132,7 @@
     <TextView
         android:id="@+id/categoryTv"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="80dp"
         android:layout_below="@+id/descriptionTil"
         android:layout_marginStart="380dp"
         android:layout_marginEnd="30dp"
@@ -133,11 +154,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/categoryTv"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/purple_200"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
         android:text="Upload"
-        android:textColor="@color/white"/>
+        android:textColor="@color/white" />
 
 
 

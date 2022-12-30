@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:background="@drawable/background2"
     tools:context=".CategoryAddActivity">
     <RelativeLayout
         android:layout_width="match_parent"
@@ -18,22 +18,44 @@
             android:background="@android:color/transparent"
             android:layout_margin="18dp"
             android:padding="5dp"/>
-        <ImageView
+        <!--Icon:Image-->
+        <TextView
             android:id="@+id/iconIv"
-            android:layout_width="110dp"
-            android:layout_height="110dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="48dp"
-            android:src="@drawable/logo"/>
+            android:layout_marginTop="70dp"
+            android:text="LITTERATE"
+            android:textSize="25dp"
+            android:textStyle="bold|italic" />
+
+
+
+        <TextView
+            android:id="@+id/quote"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iconIv"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="30dp"
+            android:text="Read The World Through Possibilities"
+            android:textAlignment="center"
+            android:textSize="12dp"
+            android:textStyle="bold|italic" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/iconIv"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="50dp"
             android:fontFamily="sans-serif-condensed"
             android:text="Add a new Category"
-            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textColor="@color/gray01"
             android:textSize="28sp"/>
 
 
@@ -59,22 +81,24 @@
             android:hint="Category Title"
             android:inputType="textPersonName|textCapWords"
             android:padding="10dp"
-            android:textColor="@color/black"
-            android:textColorHint="@color/black"/>
+            android:textColor="@color/black"/>.
+
 
 
     </com.google.android.material.textfield.TextInputLayout>
+
     <Button
         android:id="@+id/submitBtn"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/shape_button01"
-        android:text="Submit"
+        android:layout_width="357dp"
+        android:layout_height="63dp"
         android:layout_below="@id/categoryTil"
-        android:textColor="@color/white"/>
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="30dp"
+        android:backgroundTint="@color/purple_200"
+        android:text="Submit"
+        android:textStyle="bold"
+        android:textColor="@color/white" />
 
 
 

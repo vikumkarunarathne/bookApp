@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:background="@drawable/background2"
     tools:context=".DashboardAdminActivity">
 
     <RelativeLayout
@@ -48,24 +48,29 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/toolbarRl"
-        android:hint="search"
         android:layout_marginStart="10dp"
+        android:layout_marginTop="19dp"
         android:layout_marginEnd="10dp"
-        android:layout_marginTop="10dp"
-        android:drawableStart="@drawable/ic_search_gray"
-        android:padding="10dp"
         android:background="@color/white"
-        android:textColorHint="@color/gray03"/>
+        android:drawableStart="@drawable/ic_search_gray"
+        android:hint="search"
+        android:padding="10dp" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/categoriesRv"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:listitem="@layout/row_category"
+        android:layout_width="wrap_content"
+        android:layout_height="69dp"
+        android:layout_above="@id/bottomli"
         android:layout_below="@id/searchEt"
-        android:layout_margin="5dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="9dp"
+        android:layout_marginBottom="440dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        android:layout_above="@id/bottomli"/>
+        tools:listitem="@layout/row_category" />
+
     <LinearLayout
         android:id="@+id/bottomli"
         android:layout_width="match_parent"
@@ -73,7 +78,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="18dp"
         android:layout_marginEnd="18dp"
-        android:layout_marginBottom="18dp"
+        android:layout_marginBottom="50dp"
         android:orientation="horizontal">
 
         <Button
@@ -82,7 +87,7 @@
             android:layout_height="wrap_content"
             android:text="+ Add category"
             android:layout_weight="1"
-            android:background="@drawable/shape_button01"
+            android:backgroundTint="@color/purple_200"
             android:minHeight="50dp"
             android:textAllCaps="false"
             android:textColor="@color/white"/>
