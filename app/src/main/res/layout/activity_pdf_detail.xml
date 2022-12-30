@@ -36,11 +36,8 @@
 
     <!--content under scrollview-->
     <ScrollView
-<<<<<<< HEAD
         android:layout_above="@id/readBookBtn"
-=======
->>>>>>> origin/master
-        android:id="@+id/toolbarRl"
+        android:layout_below="@id/toolbarRl"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="10dp">
@@ -218,12 +215,10 @@
                 android:text="The description of book"
                 android:textColor="@color/black"/>
 
-
-
         </LinearLayout>
     </ScrollView>
 
-<<<<<<< HEAD
+
     <!--Button: Open-->
     <Button
         android:id="@+id/readBookBtn"
@@ -234,7 +229,4 @@
         android:text="Read"
         android:background="@color/design_default_color_primary"/>
 
-
-=======
->>>>>>> origin/master
 </RelativeLayout>
